@@ -1,0 +1,20 @@
+ROSSMANN STORE SALES - DATA EXPLORATION REPORT
+================================================================================
+
+Train Dataset: 1,017,209 rows × 9 columns
+Store Dataset: 1,115 rows × 10 columns
+
+Date Range: N/A
+Unique Stores: 1,115
+
+Missing Values Summary:
+                           Missing_Count  Missing_Percentage
+CompetitionDistance                    3            0.269058
+CompetitionOpenSinceMonth            354           31.748879
+CompetitionOpenSinceYear             354           31.748879
+Promo2SinceWeek                      544           48.789238
+Promo2SinceYear                      544           48.789238
+PromoInterval                        544           48.789238
+
+Closed Store Records: 140,864
+Zero Sales on Open Days: 42

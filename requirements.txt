@@ -1,0 +1,16 @@
+# Python Dependencies for Rossmann Store Sales Analytics Project
+# Install all packages: pip install -r requirements.txt
+
+# Data Manipulation
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Database Connectivity
+mysql-connector-python>=8.0.33
+
+# Data Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Additional utilities
+openpyxl>=3.0.0  # For Excel file support if needed
