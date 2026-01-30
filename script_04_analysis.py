@@ -3,10 +3,6 @@ Script 4: Data Analysis and Visualization
 ==========================================
 This script connects to the MySQL database, performs comprehensive
 business analytics, and creates insightful visualizations.
-
-Author: [Your Name]
-Date: [Current Date]
-Course: Business Analytics Project
 """
 
 import pandas as pd
@@ -23,14 +19,12 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (12, 6)
 plt.rcParams['font.size'] = 10
 
-# ============================================================================
 # DATABASE CONNECTION
-# ============================================================================
 
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'root',              # Change to your MySQL username
-    'password': 'Bz!03062003',  # Change to your MySQL password
+    'user': 'root',              
+    'password': 'Bz!03062003',  
     'database': 'rossmann_analytics'
 }
 
@@ -50,9 +44,7 @@ except Error as e:
 
 print("\n")
 
-# ============================================================================
 # 1. DESCRIPTIVE STATISTICS
-# ============================================================================
 
 print("[2/8] Calculating Descriptive Statistics...")
 print("-" * 80)
@@ -85,9 +77,7 @@ print(f"   Average Basket Size: ${stats_df['AvgBasketSize'].iloc[0]:,.2f}")
 
 print("\n")
 
-# ============================================================================
 # 2. SALES BY STORE TYPE
-# ============================================================================
 
 print("[3/8] Analyzing Sales by Store Type...")
 
@@ -105,7 +95,7 @@ GROUP BY s.StoreType
 ORDER BY TotalSales DESC
 """
 store_type_df = pd.read_sql(query, conn)
-print("\n📈 SALES BY STORE TYPE:")
+print("\n SALES BY STORE TYPE:")
 print(store_type_df.to_string(index=False))
 
 # Visualization
@@ -131,9 +121,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 3. PROMOTIONAL EFFECTIVENESS ANALYSIS
-# ============================================================================
 
 print("[4/8] Analyzing Promotional Effectiveness...")
 
@@ -150,7 +138,7 @@ GROUP BY Promo
 promo_df = pd.read_sql(query, conn)
 promo_df['Promo'] = promo_df['Promo'].map({0: 'No Promo', 1: 'With Promo'})
 
-print("\n🎯 PROMOTIONAL IMPACT:")
+print("\n PROMOTIONAL IMPACT:")
 print(promo_df.to_string(index=False))
 
 # Calculate lift
@@ -182,9 +170,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 4. TEMPORAL TRENDS ANALYSIS
-# ============================================================================
 
 print("[5/8] Analyzing Temporal Trends...")
 
@@ -203,7 +189,7 @@ ORDER BY Year, Month
 monthly_df = pd.read_sql(query, conn)
 monthly_df['YearMonth'] = pd.to_datetime(monthly_df[['Year', 'Month']].assign(DAY=1))
 
-print("\n📅 MONTHLY SALES TREND (Sample):")
+print("\nMONTHLY SALES TREND (Sample):")
 print(monthly_df.head(10).to_string(index=False))
 
 # Visualization - Monthly Trend
@@ -233,7 +219,7 @@ ORDER BY d.DayOfWeek
 """
 dow_df = pd.read_sql(query, conn)
 
-print("\n📅 SALES BY DAY OF WEEK:")
+print("\n SALES BY DAY OF WEEK:")
 print(dow_df.to_string(index=False))
 
 # Visualization - Day of Week
@@ -250,9 +236,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 5. COMPETITION ANALYSIS
-# ============================================================================
 
 print("[6/8] Analyzing Competition Impact...")
 
@@ -270,7 +254,7 @@ ORDER BY AvgSales DESC
 """
 comp_df = pd.read_sql(query, conn)
 
-print("\n🏪 SALES BY COMPETITION PROXIMITY:")
+print("\n SALES BY COMPETITION PROXIMITY:")
 print(comp_df.to_string(index=False))
 
 # Visualization
@@ -287,9 +271,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 6. TOP PERFORMING STORES
-# ============================================================================
 
 print("[7/8] Identifying Top Performing Stores...")
 
@@ -311,7 +293,7 @@ LIMIT 10
 """
 top_stores_df = pd.read_sql(query, conn)
 
-print("\n🏆 TOP 10 PERFORMING STORES:")
+print("\nTOP 10 PERFORMING STORES:")
 print(top_stores_df.to_string(index=False))
 
 # Visualization
@@ -328,9 +310,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 7. CORRELATION ANALYSIS
-# ============================================================================
 
 print("[8/8] Performing Correlation Analysis...")
 
@@ -364,9 +344,7 @@ plt.close()
 
 print("\n")
 
-# ============================================================================
 # 8. GENERATE COMPREHENSIVE INSIGHTS REPORT
-# ============================================================================
 
 print("="*80)
 print("GENERATING INSIGHTS REPORT")

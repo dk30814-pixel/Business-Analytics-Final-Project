@@ -1,6 +1,6 @@
 # Rossmann Store Sales - Business Analytics Project
 
-## 📋 Project Overview
+##  Project Overview
 
 This project performs comprehensive business analytics on Rossmann drugstore sales data using Python, MySQL, and data visualization libraries. The analysis includes data extraction, preprocessing, database design, and advanced analytics with visualizations.
 
@@ -70,7 +70,7 @@ DB_CONFIG = {
 
 ---
 
-## 🚀 Running the Project
+##  Running the Project
 
 ### Execute Scripts in Order
 
@@ -123,7 +123,7 @@ python 03_mysql_database_setup.py
 - MySQL database with 3 tables (dim_store, dim_date, fact_sales)
 - `database_setup_info.txt`
 
-**⚠️ Important:** Make sure MySQL is running before executing this script!
+** Important:** Make sure MySQL is running before executing this script!
 
 ---
 
@@ -155,7 +155,7 @@ python 04_data_analysis_visualization.py
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 rossmann-analytics/
@@ -185,7 +185,7 @@ rossmann-analytics/
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ### Star Schema Design
 
@@ -206,7 +206,7 @@ rossmann-analytics/
 
 ---
 
-## 📊 Analysis Outputs
+##  Analysis Outputs
 
 The project generates 7 key visualizations:
 
@@ -255,7 +255,7 @@ pip install [missing-module-name]
 
 ---
 
-## 📧 Support
+##  Support
 
 For issues or questions about this project:
 1. Check the error message carefully
@@ -265,7 +265,7 @@ For issues or questions about this project:
 
 ---
 
-## 📝 Project Report Components
+##  Project Report Components
 
 For your final submission, include:
 
@@ -280,7 +280,7 @@ For your final submission, include:
 
 ---
 
-## ✅ Checklist for Successful Execution
+##  Checklist for Successful Execution
 
 - [ ] Python 3.8+ installed
 - [ ] MySQL Server installed and running
@@ -296,7 +296,7 @@ For your final submission, include:
 
 ---
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 By completing this project, you will have demonstrated:
 

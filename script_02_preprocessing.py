@@ -3,10 +3,6 @@ Script 2: Data Preprocessing and Transformation
 ================================================
 This script performs comprehensive data cleaning, handles missing values,
 creates derived columns, and builds dimension tables for the star schema.
-
-Author: [Your Name]
-Date: [Current Date]
-Course: Business Analytics Project
 """
 
 import pandas as pd
@@ -20,9 +16,7 @@ print("ROSSMANN STORE SALES - DATA PREPROCESSING")
 print("="*80)
 print("\n")
 
-# ============================================================================
 # 1. LOAD RAW DATA
-# ============================================================================
 
 print("[1/7] Loading raw datasets...")
 train_df = pd.read_csv('train.csv')
@@ -31,9 +25,7 @@ print(f"✓ Loaded {len(train_df):,} training records")
 print(f"✓ Loaded {len(store_df):,} store records")
 print("\n")
 
-# ============================================================================
 # 2. DATA CLEANING - TRAIN DATASET
-# ============================================================================
 
 print("[2/7] Cleaning TRAIN dataset...")
 
@@ -66,9 +58,7 @@ print(f"      Removed {removed:,} zero-sales records ({removed/original_count*10
 print(f"✓ Cleaned TRAIN dataset: {len(train_df):,} records remaining")
 print("\n")
 
-# ============================================================================
 # 3. DATA CLEANING - STORE DATASET
-# ============================================================================
 
 print("[3/7] Cleaning STORE dataset...")
 
@@ -96,9 +86,7 @@ store_df['PromoInterval'].fillna('None', inplace=True)
 print("✓ Cleaned STORE dataset")
 print("\n")
 
-# ============================================================================
 # 4. CREATE DERIVED COLUMNS
-# ============================================================================
 
 print("[4/7] Creating derived columns...")
 
@@ -157,9 +145,7 @@ print("      Added: CompetitionCategory, HasCompetition")
 print("✓ Derived columns created")
 print("\n")
 
-# ============================================================================
 # 5. CREATE DATE DIMENSION TABLE
-# ============================================================================
 
 print("[5/7] Creating Date Dimension table...")
 
@@ -195,9 +181,7 @@ print(f"✓ Created Date Dimension with {len(date_dim):,} records")
 print(f"   Date range: {min_date.date()} to {max_date.date()}")
 print("\n")
 
-# ============================================================================
 # 6. MERGE DATASETS AND CREATE FACT TABLE
-# ============================================================================
 
 print("[6/7] Creating Fact and Dimension tables...")
 
@@ -238,9 +222,7 @@ print(f"   • dim_date: {len(dim_date):,} records")
 print(f"   • fact_sales: {len(fact_sales_final):,} records")
 print("\n")
 
-# ============================================================================
 # 7. SAVE PROCESSED DATA
-# ============================================================================
 
 print("[7/7] Saving processed datasets...")
 

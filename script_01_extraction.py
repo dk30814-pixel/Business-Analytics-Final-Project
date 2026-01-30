@@ -3,10 +3,6 @@ Script 1: Data Extraction and Exploration
 ==========================================
 This script loads the Rossmann dataset and performs initial data exploration
 to understand the structure, identify data quality issues, and prepare for preprocessing.
-
-Author: [Your Name]
-Date: [Current Date]
-Course: Business Analytics Project
 """
 
 import pandas as pd
@@ -14,9 +10,7 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
-# ============================================================================
 # 1. DATA EXTRACTION
-# ============================================================================
 
 print("="*80)
 print("ROSSMANN STORE SALES - DATA EXTRACTION & EXPLORATION")
@@ -53,9 +47,7 @@ print(store_df.dtypes)
 
 print("\n")
 
-# ============================================================================
 # 3. DATA PREVIEW
-# ============================================================================
 
 print("[3/6] Data Preview")
 print("-" * 80)
@@ -67,9 +59,7 @@ print(store_df.head())
 
 print("\n")
 
-# ============================================================================
 # 4. DATA QUALITY ASSESSMENT
-# ============================================================================
 
 print("[4/6] Data Quality Assessment")
 print("-" * 80)
@@ -98,9 +88,7 @@ print(f"Duplicate rows in STORE: {store_df.duplicated().sum()}")
 
 print("\n")
 
-# ============================================================================
 # 5. DESCRIPTIVE STATISTICS
-# ============================================================================
 
 print("[5/6] Descriptive Statistics")
 print("-" * 80)
@@ -127,20 +115,18 @@ for col in categorical_cols_store:
 
 print("\n")
 
-# ============================================================================
 # 6. KEY FINDINGS & DATA ISSUES IDENTIFIED
-# ============================================================================
 
 print("[6/6] Key Findings & Data Quality Issues")
 print("-" * 80)
 
-print("\n📊 DATASET SUMMARY:")
+print("\n DATASET SUMMARY:")
 print(f"   • Total training records: {len(train_df):,}")
 print(f"   • Number of unique stores: {train_df['Store'].nunique():,}")
 print(f"   • Date range: Unable to determine (contains invalid dates)")
 print(f"   • Total stores in metadata: {len(store_df):,}")
 
-print("\n⚠️  DATA QUALITY ISSUES IDENTIFIED:")
+print("\n  DATA QUALITY ISSUES IDENTIFIED:")
 
 # Issue 1: Closed stores
 closed_stores = train_df[train_df['Open'] == 0]
@@ -186,7 +172,7 @@ print("="*80)
 print("\n")
 
 # Save summary report
-print("💾 Saving exploration summary to 'data_exploration_report.txt'...")
+print(" Saving exploration summary to 'data_exploration_report.txt'...")
 
 # Get date range safely
 date_range_str = f"{'N/A'}"

@@ -3,15 +3,6 @@ Script 3: MySQL Database Setup and Data Loading
 ================================================
 This script creates the MySQL database, defines the star schema,
 creates tables with relationships, and loads the preprocessed data.
-
-Author: [Your Name]
-Date: [Current Date]
-Course: Business Analytics Project
-
-PREREQUISITES:
-- MySQL Server installed and running
-- MySQL Connector for Python installed: pip install mysql-connector-python
-- Preprocessed CSV files from script 02
 """
 
 import pandas as pd
@@ -21,15 +12,12 @@ from mysql.connector import Error
 import warnings
 warnings.filterwarnings('ignore')
 
-# ============================================================================
 # DATABASE CONFIGURATION
-# ============================================================================
 
-# IMPORTANT: Update these with your MySQL credentials
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'root',           # Change to your MySQL username
-    'password': 'Bz!03062003'  # Change to your MySQL password
+    'user': 'root',
+    'password': 'Bz!03062003' 
 }
 
 DATABASE_NAME = 'rossmann_analytics'
@@ -39,9 +27,7 @@ print("ROSSMANN STORE SALES - MySQL DATABASE SETUP")
 print("="*80)
 print("\n")
 
-# ============================================================================
 # 1. CONNECT TO MySQL AND CREATE DATABASE
-# ============================================================================
 
 print("[1/6] Connecting to MySQL server...")
 
@@ -70,9 +56,7 @@ except Error as e:
 
 print("\n")
 
-# ============================================================================
 # 2. CREATE DIMENSION TABLES
-# ============================================================================
 
 print("[3/6] Creating dimension tables...")
 
@@ -126,9 +110,7 @@ print("✓ Created table: dim_date")
 
 print("\n")
 
-# ============================================================================
 # 3. CREATE FACT TABLE
-# ============================================================================
 
 print("[4/6] Creating fact table...")
 
@@ -165,9 +147,7 @@ print("✓ Created indexes for query optimization")
 
 print("\n")
 
-# ============================================================================
 # 4. LOAD DATA FROM CSV FILES
-# ============================================================================
 
 print("[5/6] Loading data from CSV files...")
 
@@ -278,9 +258,7 @@ except FileNotFoundError as e:
 
 print("\n")
 
-# ============================================================================
 # 5. VERIFY DATA INTEGRITY
-# ============================================================================
 
 print("[6/6] Verifying data integrity...")
 
@@ -337,9 +315,7 @@ for row in sample:
 
 print("\n")
 
-# ============================================================================
 # 6. DATABASE SUMMARY
-# ============================================================================
 
 # Get database statistics
 cursor.execute("SELECT SUM(Sales) FROM fact_sales")
@@ -403,7 +379,7 @@ print(summary)
 # Save database info
 with open('database_setup_info.txt', 'w') as f:
     f.write(summary)
-print("💾 Saved database info to 'database_setup_info.txt'")
+print(" Saved database info to 'database_setup_info.txt'")
 
 # Close connection
 cursor.close()
